@@ -1,17 +1,17 @@
 require 'java'
 
-import Java::scala::Function1
-import Java::scala::collection::immutable::List
-import Java::scala::xml::Text
-import Java::scala::xml::NodeSeq
+java_import Java::scala::Function1
+java_import Java::scala::collection::immutable::List
+java_import Java::scala::xml::Text
+java_import Java::scala::xml::NodeSeq
 
-import Java::net::liftweb::http::SHtml
-import Java::net::liftweb::http::js::JsCmds
-import Java::net::liftweb::util::Helpers
-import Java::net::liftweb::util::CanBind
-import Java::net::liftweb::util::ClearClearable
+java_import Java::net::liftweb::http::SHtml
+java_import Java::net::liftweb::http::js::JsCmds
+java_import Java::net::liftweb::util::Helpers
+java_import Java::net::liftweb::util::CanBind
+java_import Java::net::liftweb::util::ClearClearable
 
-import Java::me::frmr::rubyist::ModuleHelpers
+java_import Java::me::frmr::rubyist::RubySnippetHelpers
 
 class ApplyHolder
   def initialize(held)
@@ -25,7 +25,7 @@ end
 
 class String
   def cssSel(newValue)
-    helpers = ModuleHelpers.new
+    helpers = RubySnippetHelpers.new
 
     if newValue.is_a? Fixnum
       newValue = newValue.to_s

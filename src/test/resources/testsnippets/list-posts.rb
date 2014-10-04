@@ -1,5 +1,3 @@
-require 'modules/core/base'
-
 posts = [
   {
     permalink: "http://my.blog.com/permalink1",

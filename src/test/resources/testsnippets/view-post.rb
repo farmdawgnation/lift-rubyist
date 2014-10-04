@@ -1,6 +1,4 @@
-require 'modules/core/base'
-
-helpers = ModuleHelpers.new
+helpers = RubySnippetHelpers.new
 
 post = {
   permalink: "http://google.com/permalink",
