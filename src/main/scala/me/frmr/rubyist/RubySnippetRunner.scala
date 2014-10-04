@@ -1,6 +1,7 @@
 package me.frmr.rubyist
 
 import scala.xml.NodeSeq
+import scala.io.Source
 
 import net.liftweb._
   import common._
@@ -14,12 +15,13 @@ class RubySnippetRunner(
   container: ScriptingContainer = new ScriptingContainer
 ) extends Loggable {
   container.setClassLoader(getClass.getClassLoader)
-  val baseModuleContent = getClass.getClassLoader.getResourceAsStream("base.rb")
 
   def evaluate(moduleName: String, snippetName: String): (NodeSeq)=>NodeSeq = {
     val moduleFilename = s"$modulesPath/$moduleName/$snippetName.rb"
 
+    val baseModuleContent = getClass.getClassLoader.getResourceAsStream("base.rb")
     container.runScriptlet(baseModuleContent, "base.rb")
+
     val rubyDefinedTransformRunner = container.parse(PathType.RELATIVE, moduleFilename)
     val rubyDefinedTransform = rubyDefinedTransformRunner.run
 
