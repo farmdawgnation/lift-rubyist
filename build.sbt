@@ -9,7 +9,7 @@ scalaVersion := "2.10.3"
 libraryDependencies ++= {
   Seq(
     "net.liftweb" %% "lift-webkit" % "2.6-RC1" % "compile",
-    "org.jruby" % "jruby" % "1.7.4",
-    "org.scalatest" %% "scalatest" % "2.0" % "test"
+    "org.jruby" % "jruby" % "1.7.16",
+    "org.scalatest" %% "scalatest" % "2.2.1" % "test"
   )
 }
