@@ -36,7 +36,7 @@ posts = [
   }
 ]
 
-".posts".cssSel(posts.map { |post|
+".post".cssSel(posts.map { |post|
   ".post-link [href]".cssSel(post[:permalink]) &
   ".title *".cssSel(post[:title]) &
   ".date-time *".cssSel(post[:dateTime]) &
