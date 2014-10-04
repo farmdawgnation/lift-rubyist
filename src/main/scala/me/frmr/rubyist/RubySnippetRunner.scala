@@ -9,10 +9,10 @@ import net.liftweb._
 
 import org.jruby.embed._
 
-object RubySnippetRunner extends Loggable {
-  private val modulesPath = Props.get("modules.path") openOr ""
-  private val container = new ScriptingContainer
-
+class RubySnippetRunner(
+  modulesPath: String = Props.get("modules.path").openOr(""),
+  container: ScriptingContainer = new ScriptingContainer
+) extends Loggable {
   def evaluate(moduleName: String, snippetName: String): (NodeSeq)=>NodeSeq = {
     val moduleFilename = s"$modulesPath/$moduleName/$snippetName.rb"
 
