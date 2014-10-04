@@ -1,5 +1,7 @@
 package me.frmr.rubyist
 
+import scala.xml.NodeSeq
+
 import net.liftweb._
   import common._
   import util._
